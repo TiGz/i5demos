@@ -6,13 +6,12 @@ Some Supabase Edge functions to support AI demos for i5
 
 Publish an arbitrary file to the web by POSTing json:
 
-    curl --location 'http://localhost:54321/functions/v1/publish-file' \
+    curl --location 'https://dmkjdggyqwksrktvixhk.supabase.co/functions/v1/publish-file' \
     --header 'Content-Type: application/json' \
-    --header 'Authorization: Bearer <supabase anon access token>' \
     --data '{
     "folder": "adamtesting",
     "filename": "file1.txt",
-    "data": "File contents go here - updated again",
+    "data": "File contents go here - updated again foo",
     "mime_type": "text/plain"
     }'
 
@@ -23,3 +22,13 @@ Response contains the published url like:
     }
 
 A second request with the same folder+filename will replace the existing file.
+
+You can also upload images by encoding the data in base64 like:
+
+    {
+  "folder": "adamtesting",
+  "filename": "image1.png",
+  "data": "/9j/4AAQSkZJRgABAQAAAQABAAD<snipped_for_brevity>/2Q==",
+  "mime_type": "image/jpeg",
+  "type":"base64"
+}
