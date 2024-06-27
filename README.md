@@ -26,9 +26,13 @@ A second request with the same folder+filename will replace the existing file.
 You can also upload images by encoding the data in base64 like:
 
     {
-  "folder": "adamtesting",
-  "filename": "image1.png",
-  "data": "/9j/4AAQSkZJRgABAQAAAQABAAD<snipped_for_brevity>/2Q==",
-  "mime_type": "image/jpeg",
-  "type":"base64"
-}
+    "folder": "adamtesting",
+    "filename": "image1.png",
+    "data": "/9j/4AAQSkZJRgABAQAAAQABAAD<snipped_for_brevity>/2Q==",
+    "mime_type": "image/jpeg",
+    "type":"base64"
+    }
+
+The files are published to a bucket in s3 and are made publically readable.
+
+WARNING: there is no auth on this function currently
