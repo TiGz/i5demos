@@ -58,3 +58,28 @@ Returns a response like:
 Will assume UK number if country code is left off. May not send to all countries... let me know if there are issues.
 
 Might run out of credit if used a lot... uses ClickSend under the covers.
+
+## Send Email
+
+Send an Arbitrary Email with optional attachments:
+
+{
+  "to": [
+    {
+      "email": "ajchesney@gmail.com",
+      "name": "Adam"
+    }
+  ],
+  "from": "Incept5.ai",
+  "subject": "Just letting you know...",
+  "body": "Hi Adam, Incept 5.ai will be awesome",
+    "attachments": [
+    {
+      "content": "dGhpcyBpcyBhbiBleGFtcGxlIHRleHQgZmlsZSBhdHRhY2htZW50",
+      "type": "text/plain",
+      "filename": "attachment.txt",
+      "disposition": "attachment",
+      "content_id": "unique_id"
+    }
+  ]
+}
