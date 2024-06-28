@@ -63,23 +63,23 @@ Might run out of credit if used a lot... uses ClickSend under the covers.
 
 Send an Arbitrary Email with optional attachments:
 
-{
-  "to": [
     {
-      "email": "ajchesney@gmail.com",
-      "name": "Adam"
+    "to": [
+        {
+        "email": "ajchesney@gmail.com",
+        "name": "Adam"
+        }
+    ],
+    "from": "Incept5.ai",
+    "subject": "Just letting you know...",
+    "body": "Hi Adam, Incept 5.ai will be awesome",
+        "attachments": [
+        {
+        "content": "dGhpcyBpcyBhbiBleGFtcGxlIHRleHQgZmlsZSBhdHRhY2htZW50",
+        "type": "text/plain",
+        "filename": "attachment.txt",
+        "disposition": "attachment",
+        "content_id": "unique_id"
+        }
+    ]
     }
-  ],
-  "from": "Incept5.ai",
-  "subject": "Just letting you know...",
-  "body": "Hi Adam, Incept 5.ai will be awesome",
-    "attachments": [
-    {
-      "content": "dGhpcyBpcyBhbiBleGFtcGxlIHRleHQgZmlsZSBhdHRhY2htZW50",
-      "type": "text/plain",
-      "filename": "attachment.txt",
-      "disposition": "attachment",
-      "content_id": "unique_id"
-    }
-  ]
-}
