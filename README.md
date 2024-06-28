@@ -8,10 +8,11 @@ Publish an arbitrary file to the web by POSTing json:
 
     curl --location 'https://dmkjdggyqwksrktvixhk.supabase.co/functions/v1/publish-file' \
     --header 'Content-Type: application/json' \
+    --header 'Authorization: Bearer <anon_api_key>' \
     --data '{
     "folder": "adamtesting",
     "filename": "file1.txt",
-    "data": "File contents go here - updated again foo",
+    "data": "File contents go here - updated again foo meow",
     "mime_type": "text/plain"
     }'
 
