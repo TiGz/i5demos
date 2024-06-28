@@ -36,4 +36,25 @@ You can also upload images by encoding the data in base64 like:
 
 The files are published to a bucket in s3 and are made publically readable.
 
-WARNING: there is no auth on this function currently
+## Send SMS
+
+Send an arbitrary SMS:
+
+    curl --location 'https://dmkjdggyqwksrktvixhk.supabase.co/functions/v1/send-sms' \
+    --header 'Content-Type: application/json' \
+    --header 'Authorization: Bearer <anon_api_key>' \
+    --data '{
+    "phone": "07780962961",
+    "message": "this is another test for Adam"
+    }'
+
+Returns a response like:
+
+    {
+    "success": true,
+    "message": "SMS sent successfully"
+    }
+
+Will assume UK number if country code is left off. May not send to all countries... let me know if there are issues.
+
+Might run out of credit if used a lot... uses ClickSend under the covers.
